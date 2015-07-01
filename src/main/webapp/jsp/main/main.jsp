@@ -7,15 +7,15 @@
         <title>Simple World</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- font Awesome -->
-        <link href="${ctx}/ui/lte/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="${BasePath}/ui/lte/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="${ctx}/ui/lte/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="${BasePath}/ui/lte/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
-        <link href="${ctx}/ui/lte/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <link href="${BasePath}/ui/lte/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         <!-- AdminLTE App -->
-        <script src="${ctx}/ui/lte/js/plugins/AdminLTE/app.js" type="text/javascript"></script>
+        <script src="${BasePath}/ui/lte/js/plugins/AdminLTE/app.js" type="text/javascript"></script>
     </head>
-    <body class="skin-blue">
+    <body class="skin-black">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="index.html" class="logo">

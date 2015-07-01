@@ -3,7 +3,10 @@
 <%@include file="jsp/common/common.jsp" %>
 <html>
 <head>
-
+<link href="${BasePath}/ui/css/metro-bootstrap.css" rel="stylesheet" type="text/css">
+<link href="${BasePath}/ui/css/metro-bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="${BasePath}/ui/js/metro.min.js"></script>
+<script type="text/javascript" src="${BasePath}/ui/js/metro/metro-dropdown.js"></script>
 </head>
 <body class="metro" style="width:100%">
 
