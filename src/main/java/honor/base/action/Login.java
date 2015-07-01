@@ -1,5 +1,6 @@
 package honor.base.action;
 
+import honor.model.User;
 import honor.user.service.impl.UserServiceImpl;
 
 import javax.annotation.Resource;
@@ -17,11 +18,11 @@ public class Login {
 	private UserServiceImpl userService;
 	
 	@RequestMapping("/main")
-	public String login(HttpServletRequest request,Model model){
+	public String login(HttpServletRequest request,User user,Model model){
 		
 		
 		System.out.println("1111111111");
-		
+		model.addAttribute("user",user);
 		
 		return "/main/main";
 		

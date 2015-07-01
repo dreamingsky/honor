@@ -15,7 +15,7 @@
 <script type="text/javascript" src="${BasePath}/ui/js/docs.js"></script>
 <script type="text/javascript" src="${BasePath}/ui/js/github.info.js"></script>
 <script type="text/javascript" src="${BasePath}/ui/js/ga.js"></script>
-<script type="text/javascript" src="${BasePath}/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${BasePath}/ui/bootstrap/js/bootstrap.min.js"></script>
 <script>
 var basePath = "${BasePath}";
 </script>
