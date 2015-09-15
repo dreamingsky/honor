@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" language="java"%>
-<%@include file="jsp/common/taglib.jsp" %>
-<%@include file="jsp/common/common.jsp" %>
+<%@include file="common/taglib.jsp" %>
+<%@include file="common/common.jsp" %>
 <html>
 <head>
 <link href="${BasePath}/ui/css/metro-bootstrap.css" rel="stylesheet" type="text/css">
