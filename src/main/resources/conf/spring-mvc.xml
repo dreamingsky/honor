@@ -14,6 +14,8 @@
     http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
     
+    <mvc:view-controller path="/" view-name="index" />
+    
     <mvc:resources location="/jsp/" mapping="/jsp/**"/> 
 	<mvc:resources location="/ui/" mapping="/ui/**"/> 
     <!-- spring mvc 扫描 -->

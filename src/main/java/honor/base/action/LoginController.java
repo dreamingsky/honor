@@ -12,10 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/login")
-public class Login {
+public class LoginController {
 	
 	@Resource
 	private UserServiceImpl userService;
+	
+	@RequestMapping("/")
+	public String toLogin(HttpServletRequest request,User user,Model model){
+		
+		
+		System.out.println("1111111111");
+		model.addAttribute("user",user);
+		
+		return "index";
+		
+	}
 	
 	@RequestMapping("/main")
 	public String login(HttpServletRequest request,User user,Model model){

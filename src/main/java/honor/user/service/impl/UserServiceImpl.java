@@ -15,7 +15,6 @@ public class UserServiceImpl implements UserService{
 	public User getUserById(String id) {
 		return null;
 	}
-	@Override
 	public User getUserByNameAndPass(String username, String password) {
 		
 		

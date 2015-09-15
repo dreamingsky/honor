@@ -10,7 +10,6 @@ public class UserDaoImpl implements UserDao{
 		return null;
 	}
 
-	@Override
 	public User getUserByNameAndPass(String username, String password) {
 
 		return null;
