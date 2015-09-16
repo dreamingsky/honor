@@ -3,10 +3,18 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="honor.user.dao.UserDao">
-    <select id="getUserById" parameterType="String" resultType="user">
-        select * from `user` where id = #{id}
+
+	<resultMap type="user" id="userMap">
+        <id property="id" column="id"/>
+        <result property="loginName" column="login_name"/>
+        <result property="chinaName" column="user_name"/>
+        <result property="password" column="login_password"/>
+    </resultMap>
+
+    <select id="getUserById" parameterType="String" resultMap="userMap">
+        select * from user where id = #{id}
     </select>
-    <select id="getUserByNameAndPass"  resultType="user">
+    <select id="getUserByNameAndPass"  resultMap="userMap">
         select * from user where loginName = #{0} and password= #{1}
     </select>
 </mapper>

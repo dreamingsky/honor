@@ -24,7 +24,7 @@ public class LoginController {
 		System.out.println("1111111111");
 		model.addAttribute("user",user);
 		
-		return "index";
+		return "login";
 		
 	}
 	

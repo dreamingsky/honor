@@ -66,18 +66,21 @@
   </bean>
      
     <!-- mybatis文件配置，扫描所有mapper文件 -->
-      <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+       <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
           p:configLocation="classpath:conf/mybatis-config.xml"
           p:mapperLocations="classpath:mappers/*.xml"/>
        
-   <!-- spring与mybatis整合配置，扫描所有dao -->
- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
-        p:basePackage="honor.*.dao"
+	    <!-- spring与mybatis整合配置，扫描所有dao -->
+	 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+	        p:basePackage="honor.*.dao"
         p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
   
-   <!-- 对数据源进行事务管理 -->
-  <bean id="transactionManager"
-        class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-        p:dataSource-ref="dataSource"/>
+	   <!-- 对数据源进行事务管理 -->
+	    <bean id="transactionManager"
+	        class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+	        p:dataSource-ref="dataSource"/>
+	        
+	    <!-- 启用对事务注解的支持 -->  
+    	<tx:annotation-driven transaction-manager="transactionManager"/> 
 </beans>
