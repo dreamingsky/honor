@@ -91,7 +91,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="javascript:;">用户管理</a>
+                                    <a href="javascript:;" onclick="">用户管理</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">角色管理</a>
@@ -109,14 +109,10 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="javascript:;">
-                                        信息修改
-                                    </a>
+                                    <a href="javascript:;">信息修改</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
-                                        密码修改
-                                    </a>
+                                    <a href="javascript:;">密码修改</a>
                                 </li>
                                 
      
@@ -216,28 +212,17 @@
                     <div class="row">
                         <div class="col-md-12">
                             <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-                            <h3 class="page-title" id="index-page-title">Dashboard</h3>
-                            <ul class="page-breadcrumb breadcrumb">
-                                <li>
-                                    <i class="fa fa-home"></i>
-                                    <a href="javascript:;">
-                                        首页
-                                    </a>
-                                    <i class="fa fa-angle-right"></i>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        Dashboard
-                                    </a>
-                                </li>
-                            </ul>
+                            <h3 class="page-title" id="index-page-title">Space</h3>
                             <!-- END PAGE TITLE & BREADCRUMB-->
                         </div>
                     </div>
                     <!-- END PAGE HEADER-->
 
                     <!-- BEGIN DASHBOARD STATS -->
-                    <div id="main-content"></div>
+                    <div id="main-content">
+                    
+                    <iframe src="../jsp/user/userList.jsp" width="100%" id="main" onload="iFrameHeight()" frameborder="no"></iframe>
+                    </div>
 
                     <!-- END PORTLET-->
                 </div>
@@ -255,4 +240,19 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+    
+    function iFrameHeight() { 
+    	var ifm= document.getElementById("main"); 
+    	var subWeb = document.frames ? document.frames["main"].document : ifm.contentDocument; 
+    	if(ifm != null && subWeb != null) { 
+    		var ht = subWeb.body.scrollHeight;
+    		if(ht<514){
+    			ht=514;
+    		}
+    		ifm.height = ht; 
+    	} 
+    	}
+    
+    </script>
 </html>
