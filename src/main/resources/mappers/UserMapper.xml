@@ -12,9 +12,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <select id="getUserById" parameterType="String" resultMap="userMap">
-        select * from user where id = #{id}
+        select * from user_info where id = #{id}
     </select>
     <select id="getUserByNameAndPass"  resultMap="userMap">
-        select * from user where loginName = #{0} and password= #{1}
+        select * from user_info where login_name = #{0} and login_password= #{1}
     </select>
 </mapper>

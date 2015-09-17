@@ -13,13 +13,14 @@ public class UserServiceImpl implements UserService{
 	@Resource
 	private UserDao userDao;
 	public User getUserById(String id) {
+		
 		return null;
 	}
 	public User getUserByNameAndPass(String username, String password) {
 		
+		User user = userDao.getUserByNameAndPass(username, password);
 		
-		
-		return null;
+		return user;
 	}
 
 }

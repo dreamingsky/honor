@@ -31,11 +31,13 @@ public class LoginController {
 	@RequestMapping("/main")
 	public String login(HttpServletRequest request,User user,Model model){
 		
-		
-		System.out.println("1111111111");
+		User userFind = userService.getUserByNameAndPass(user.getLoginName(),user.getPassword());
+//		if(userFind==null){
+//			return "login";
+//		}
 		model.addAttribute("user",user);
 		
-		return "/main/main";
+		return "/main/mainAss";
 		
 	}
 

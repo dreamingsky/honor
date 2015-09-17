@@ -57,11 +57,6 @@
 			<p>点击 <a href="javascript:;" id="forget-password">这里</a> 重置您的密码.
 			</p>
 		</div>
-		<div class="create-account">
-			<p>
-				 还没有账号 ?&nbsp; <a href="javascript:;" id="register-btn">创建一个账号</a>
-			</p>
-		</div>
 	</form>
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
