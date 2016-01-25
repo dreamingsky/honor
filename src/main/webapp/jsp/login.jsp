@@ -22,7 +22,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="${BasePath}/login/main" method="post">
+	<form class="login-form" action="${BasePath}/manager/login/main" method="post">
 		<h3 class="form-title">用户登录</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>

@@ -86,7 +86,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="javascript:;" onclick="">用户管理</a>
+                                    <a href="${BasePath}/manager/user/list">用户管理</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">角色管理</a>

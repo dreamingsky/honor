@@ -10,18 +10,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/manager/user")
 public class UserController {
 	@Resource
 	private UserServiceImpl userService;
 	
-	@RequestMapping("/userList")
+	@RequestMapping("/list")
 	public String userList(HttpServletRequest reqeuest,Model model){
 		
 		System.out.println("1111111111111");
 		
 		
-		return "user/userList";
+		return "/user/userList";
 	}
 
 }

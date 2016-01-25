@@ -40,7 +40,7 @@
     	</filter>
    		<filter-mapping>
 		     <filter-name>sitemesh</filter-name>
-		     <url-pattern>/*</url-pattern>
+		     <url-pattern>/manager/*</url-pattern>
         </filter-mapping>
 	  
 	  <filter-mapping>
@@ -73,7 +73,7 @@
 	  
 	  <servlet-mapping>
 	    <servlet-name>springMVC</servlet-name>
-	    <url-pattern>/</url-pattern>
+	    <url-pattern>/manager/</url-pattern>
 	  </servlet-mapping>
   
 	  <error-page>

@@ -27,7 +27,7 @@
 <div style="margin-top: 160px;margin-bottom: 50px;" align="center">
     <h1>Log In</h1> 
 </div>
-<form action="login/main" id="login" name="login" method="post">
+<form action="manager/login/main" id="login" name="login" method="post">
 <div style="width: 100%;" align="center" class="form-group">
 		<div >
         	<input id="loginName" name="loginName" class="form-control" style="width: 20%;height: 40px; display:inline-block;" type="text" placeholder="Username" autofocus required /> 
