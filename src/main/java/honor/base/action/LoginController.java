@@ -23,7 +23,7 @@ public class LoginController {
 		
 		System.out.println("1111111111");
 		model.addAttribute("user",user);
-		return "login";
+		return "login_lte";
 		
 	}
 	
@@ -36,7 +36,7 @@ public class LoginController {
 //		}
 		model.addAttribute("user",user);
 		
-		return "/main/index";
+		return "/main/main";
 		
 	}
 

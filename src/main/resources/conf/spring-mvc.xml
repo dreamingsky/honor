@@ -14,10 +14,7 @@
     http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
     
-    <mvc:view-controller path="/manager" view-name="index" />
-    
-    <mvc:resources location="/jsp/" mapping="/jsp/**"/> 
-	<mvc:resources location="/ui/" mapping="/ui/**"/> 
+    <mvc:view-controller path="/" view-name="login_quick" />
     <!-- spring mvc 扫描 -->
      <context:component-scan base-package="honor.*.action"/>
     <!-- 默认的注解映射的支持 -->  

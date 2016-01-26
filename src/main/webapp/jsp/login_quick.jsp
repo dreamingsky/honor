@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@include file="common/taglib.jsp" %>
-<%@include file="common/commonAss.jsp" %>
+<%@include file="common/common_vague.jsp" %>
 
 <html lang="en" class="no-js">
 <head>

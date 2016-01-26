@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" language="java"%>
 <%@include file="/jsp/common/taglib.jsp" %>
-<%@include file="/jsp/common/commonAss.jsp" %>
+<%@include file="/jsp/common/common_vague.jsp" %>
 <html lang="en" class="no-js">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
@@ -86,7 +86,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${BasePath}/manager/user/list">用户管理</a>
+                                    <a href="${BasePath}/user/list">用户管理</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">角色管理</a>
@@ -234,19 +234,4 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript">
-    
-    function iFrameHeight() { 
-    	var ifm= document.getElementById("main"); 
-    	var subWeb = document.frames ? document.frames["main"].document : ifm.contentDocument; 
-    	if(ifm != null && subWeb != null) { 
-    		var ht = subWeb.body.scrollHeight;
-    		if(ht<514){
-    			ht=514;
-    		}
-    		ifm.height = ht; 
-    	} 
-    	}
-    
-    </script>
 </html>

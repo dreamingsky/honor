@@ -1,5 +1,5 @@
 <%@include file="../common/taglib.jsp" %>
-<%@include file="../common/common.jsp" %>
+<%@include file="../common/common_vague.jsp" %>
 <html>
 <head>
     <title>simple world</title>
