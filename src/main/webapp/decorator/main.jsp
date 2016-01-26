@@ -86,7 +86,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="${BasePath}/user/list">用户管理</a>
+                                    <a href="javascript:;" onclick="toUser()">用户管理</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">角色管理</a>
@@ -235,3 +235,11 @@
         </div>
     </body>
 </html>
+
+<script>
+
+function toUser(){
+	window.location.href = basePath + "/user/list";
+}
+
+</script>

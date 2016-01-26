@@ -112,13 +112,11 @@
 			    </div><!-- /.modal-content -->
 			  </div><!-- /.modal-dialog -->
 		</div>
+		<script type="text/javascript">
+			function addUser(){
+				$("#addUser").modal();
+			}
+		</script>
 </body>
-<script type="text/javascript">
 
-function addUser(){
-	$("#addUser").modal();
-	
-}
-
-</script>
 </html>
