@@ -5,16 +5,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="honor.user.dao.UserDao">
 
 	<resultMap type="user" id="userMap">
-        <id property="id" column="id"/>
-        <result property="loginName" column="login_name"/>
-        <result property="chinaName" column="user_name"/>
-        <result property="password" column="login_password"/>
+        <id property="id" column="id" jdbcType=""/>
+        <result property="loginName" column="login_name" jdbcType=""/>
+        <result property="chinaName" column="user_name" jdbcType=""/>
+        <result property="password" column="login_password" jdbcType=""/>
+        <result property="userType" column="user_type" jdbcType=""/>
+        <result property="userEmail" column="user_email" jdbcType=""/>
+        <result property="status" column="status" jdbcType=""/>
     </resultMap>
 
     <select id="getUserById" parameterType="String" resultMap="userMap">
         select * from user_info where id = #{id}
     </select>
-    <select id="getUserByNameAndPass"  resultMap="userMap">
+    <select id="getUserByNameAndPassword"  resultMap="userMap">
         select * from user_info where login_name = #{0} and login_password= #{1}
     </select>
+    
+    <select id="getUserList"  resultMap="userMap">
+        select * from user_info where status=1
+    </select>
+    
+    <insert id="saveUser" parameterType="user">
+        insert into user_info (id,login_name,user_name,password,user_type,user_email,status) 
+        values (#{id},#{loginName},#{chinaName},#{password},#{userType},#{userEmail},#{status})
+    </insert>
 </mapper>

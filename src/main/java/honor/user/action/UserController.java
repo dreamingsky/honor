@@ -1,8 +1,11 @@
 package honor.user.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import honor.model.User;
 import honor.user.service.impl.UserServiceImpl;
 
 import org.springframework.stereotype.Controller;
@@ -16,12 +19,30 @@ public class UserController {
 	private UserServiceImpl userService;
 	
 	@RequestMapping("/list")
-	public String userList(HttpServletRequest reqeuest,Model model){
+	public String userList(HttpServletRequest request,User user){
 		
 		System.out.println("1111111111111");
 		
-		
+		List<User> userList = userService.getUserList();
+		request.setAttribute("userList",userList);
 		return "/user/list";
+	}
+	
+	@RequestMapping("/one")
+	public String findUser(HttpServletRequest request,User user){
+		
+		System.out.println("1111111111111");
+		
+		user = userService.getUserByNameAndPass(user.getLoginName(),user.getPassword());
+		request.setAttribute("user",user);
+		return "/user/list";
+	}
+	
+	@RequestMapping
+	public void addUser(User user){
+		
+		
+		
 	}
 
 }

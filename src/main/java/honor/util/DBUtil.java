@@ -1,4 +1,4 @@
-package honor.util.DBUtil;
+package honor.util;
 
 public class DBUtil {
 

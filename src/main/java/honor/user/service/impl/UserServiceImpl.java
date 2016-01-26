@@ -1,5 +1,7 @@
 package honor.user.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -18,9 +20,18 @@ public class UserServiceImpl implements UserService{
 	}
 	public User getUserByNameAndPass(String username, String password) {
 		
-		User user = userDao.getUserByNameAndPass(username, password);
+		User user = userDao.getUserByNameAndPassword(username, password);
 		
 		return user;
+	}
+	public List<User> getUserList() {
+		
+		List<User> userList = userDao.getUserList();
+		return userList;
+	}
+	public void saveUser(User user) {
+		userDao.saveUser(user);
+		
 	}
 
 }
