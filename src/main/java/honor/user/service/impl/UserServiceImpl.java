@@ -10,6 +10,7 @@ import honor.common.Page;
 import honor.model.User;
 import honor.user.dao.UserDao;
 import honor.user.service.UserService;
+import honor.util.UUIDUtil;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -31,6 +32,9 @@ public class UserServiceImpl implements UserService{
 		return userList;
 	}
 	public void saveUser(User user) {
+		user.setId(UUIDUtil.getUuid());
+		user.setType(1);
+		user.setStatus(1);
 		userDao.saveUser(user);
 		
 	}

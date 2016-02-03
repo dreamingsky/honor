@@ -16,6 +16,10 @@ public class Page implements Serializable{
 	private int end=0;
 	private List results;
 	
+	public Page(){
+		
+	}
+	
 	public Page(int totalCount,int pageNum){
 		this.totalRows = totalCount;
 		if(pageNum>1){

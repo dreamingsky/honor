@@ -4,7 +4,7 @@ import honor.common.Page;
 
 public class PageParam {
 	
-	private Page page;
+	private Page page = new Page();
 
 	public Page getPage() {
 		return page;

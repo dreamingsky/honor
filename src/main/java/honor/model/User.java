@@ -9,9 +9,9 @@ public class User extends PageParam implements Serializable{
 	private String loginName;
 	private String chinaName;
 	private String password;
-	private Integer userType;//0¹ÜÀíÔ±1ÆÕÍ¨ÓÃ»§
-	private String userEmail;
-	private Integer status;//1¿ÉÓÃ2²»¿ÉÓÃ
+	private Integer type;//0ï¿½ï¿½ï¿½ï¿½Ô±1ï¿½ï¿½Í¨ï¿½Ã»ï¿½
+	private String email;
+	private Integer status;//1ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public String getId() {
 		return id;
 	}
@@ -37,24 +37,25 @@ public class User extends PageParam implements Serializable{
 		this.password = password;
 	}
 	
-	public String getUserEmail() {
-		return userEmail;
-	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
 	public Integer getStatus() {
 		return status;
 	}
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	public Integer getUserType() {
-		return userType;
+	public Integer getType() {
+		return type;
 	}
-	public void setUserType(Integer userType) {
-		this.userType = userType;
+	public void setType(Integer type) {
+		this.type = type;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	
 	
 

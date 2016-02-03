@@ -5,20 +5,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="honor.user.dao.UserDao">
 
 	<resultMap type="user" id="userMap">
-        <id property="id" column="id" jdbcType="varchar"/>
-        <result property="loginName" column="login_name" jdbcType=""/>
-        <result property="chinaName" column="user_name" jdbcType=""/>
-        <result property="password" column="login_password" jdbcType=""/>
-        <result property="userType" column="user_type" jdbcType=""/>
-        <result property="userEmail" column="user_email" jdbcType=""/>
-        <result property="status" column="status" jdbcType=""/>
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="loginName" column="login_name" jdbcType="VARCHAR"/>
+        <result property="chinaName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="password" column="login_password" jdbcType="VARCHAR"/>
+        <result property="type" column="user_type" jdbcType="INTEGER"/>
+        <result property="email" column="user_email" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
 
     <select id="getUserById" parameterType="String" resultMap="userMap">
         select * from user_info where id = #{id}
     </select>
     <select id="getUserByNameAndPassword"  resultMap="userMap">
-        select * from user_info where login_name = #{0} and login_password= #{1}
+        select * from user_info where login_name = #{0} and password= #{1}
     </select>
     
     <select id="getUserList"  resultMap="userMap">
@@ -27,9 +27,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <insert id="saveUser" parameterType="user">
         insert into user_info (id,login_name,user_name,password,user_type,user_email,status) 
-        values (#{id},#{loginName},#{chinaName},#{password},#{userType},#{userEmail},#{status})
+        values (#{id},#{loginName},#{chinaName},#{password},#{type},#{email},#{status})
     </insert>
-    <select id="getUserListByPage" parameterType="user">
+    <select id="getUserListByPage" parameterType="user" resultType="user">
 		select * from user_info where 1=1
 		<if test="chinaName!=null">
 		    and user_name like CONCAT('%','#{chinaName}','%')

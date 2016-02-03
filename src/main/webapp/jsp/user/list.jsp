@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html>
+<%@ page language="java" pageEncoding="utf-8"%>
 <%@include file="../common/taglib.jsp" %>
 <%@include file="../common/common_vague.jsp" %>
-<html>
 <head>
     <title>simple world</title>
     <link type="text/css" rel="stylesheet" href="${BasePath}/ui/lte/css/datatables/dataTables.bootstrap.css"></link>
@@ -15,19 +17,23 @@
                 <div class="box-header">
                   <h3 class="box-title">Hover Data Table</h3>
                   <p style="float: right;">
-                  <button class="btn btn-default" type="submit" onclick="addUser()">Add</button>
+                  	<button class="btn btn-default" type="submit" onclick="addUser()">Add</button>
                   </p>
                   
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                     <thead>
-                      <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Rendering engine</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Browser</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Platform(s)</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Engine version</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">CSS grade</th></tr>
+                      <tr role="row">
+                      <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending">序号</th>
+                      <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" >姓名</th>
+                      <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" >登录名(s)</th>
+                      <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" >邮箱</th>
+                      <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" >用户类型</th></tr>
                     </thead>
                     <tbody>
-                      
-                      
-                    <tr role="row" class="odd">
+                    <c:forEach items="${page.results}" var="user">
+                      <tr role="row" class="odd">
                         <td class="sorting_1">Gecko</td>
                         <td>Firefox 1.0</td>
                         <td>Win 98+ / OSX.2+</td>
@@ -40,34 +46,16 @@
                         <td>Win 98+ / OSX.2+</td>
                         <td>1.8</td>
                         <td>A</td>
-                      </tr><tr role="row" class="odd">
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 2.0</td>
-                        <td>Win 98+ / OSX.2+</td>
-                        <td>1.8</td>
-                        <td>A</td>
-                      </tr><tr role="row" class="even">
-                        <td class="sorting_1">Gecko</td>
-                        <td>Firefox 3.0</td>
-                        <td>Win 2k+ / OSX.3+</td>
-                        <td>1.9</td>
-                        <td>A</td>
-                      </tr><tr role="row" class="odd">
-                        <td class="sorting_1">Gecko</td>
-                        <td>Camino 1.0</td>
-                        <td>OSX.2+</td>
-                        <td>1.8</td>
-                        <td>A</td>
-                      </tr><tr role="row" class="even">
-                        <td class="sorting_1">Gecko</td>
-                        <td>Camino 1.5</td>
-                        <td>OSX.3+</td>
-                        <td>1.8</td>
-                        <td>A</td>
                       </tr>
-                      </tbody>
+                    </c:forEach>
+                     
+                    </tbody>
                     <tfoot>
-                      <tr><th rowspan="1" colspan="1">Rendering engine</th><th rowspan="1" colspan="1">Browser</th><th rowspan="1" colspan="1">Platform(s)</th><th rowspan="1" colspan="1">Engine version</th><th rowspan="1" colspan="1">CSS grade</th></tr>
+                      <tr><th rowspan="1" colspan="1">Rendering engine</th>
+                      <th rowspan="1" colspan="1">Browser</th>
+                      <th rowspan="1" colspan="1">Platform(s)</th>
+                      <th rowspan="1" colspan="1">Engine version</th>
+                      <th rowspan="1" colspan="1">CSS grade</th></tr>
                     </tfoot>
                   </table></div></div>
                   <div class="row">
@@ -103,11 +91,28 @@
 			        <h4 class="modal-title">Modal title</h4>
 			      </div>
 			      <div class="modal-body">
-			        <p>One fine body&hellip;</p>
+			      <form action="${BasePath}/user/save" method="post" id="submitUser">
+			          <div class="form-group">
+					    <label for="loginName">name</label>
+					    <input type="text" class="form-control" id="loginName" name="loginName" placeholder="Login">
+				  	  </div>
+					  <div class="form-group">
+						    <label for="password">password</label>
+						    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+					  </div>
+					  <div class="form-group">
+					    <label for="email">email</label>
+					    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+				  	  </div>
+				  	  <div class="form-group">
+					    <label for="birthday">birthday</label>
+					    <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birthday">
+				  	  </div>
+				   </form>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary">Save changes</button>
+			        <button type="button" class="btn btn-primary" onclick="saveUser()">Save</button>
 			      </div>
 			    </div><!-- /.modal-content -->
 			  </div><!-- /.modal-dialog -->
@@ -115,6 +120,10 @@
 		<script type="text/javascript">
 			function addUser(){
 				$("#addUser").modal();
+			}
+			function saveUser(){
+				$("#submitUser").submit();
+				//window.location.href = basePath+"/user/list";
 			}
 		</script>
 </body>

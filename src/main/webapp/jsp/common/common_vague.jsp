@@ -1,6 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8"%>
 <%request.setAttribute("BasePath",honor.util.BasePath.get(request));%>
-<!DOCTYPE html>
 <script>
 var basePath = "${BasePath}";
 </script>

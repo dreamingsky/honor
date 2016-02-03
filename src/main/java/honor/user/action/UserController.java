@@ -12,6 +12,7 @@ import honor.user.service.impl.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/user")
@@ -22,8 +23,6 @@ public class UserController {
 	@RequestMapping("/list")
 	public String userList(HttpServletRequest request,User user){
 		
-		System.out.println("1111111111111");
-		
 		Page page = userService.getUserListByPage(user);
 		request.setAttribute("page",page);
 		return "/user/list";
@@ -32,17 +31,18 @@ public class UserController {
 	@RequestMapping("/one")
 	public String findUser(HttpServletRequest request,User user){
 		
-		System.out.println("1111111111111");
-		
 		user = userService.getUserByNameAndPass(user.getLoginName(),user.getPassword());
 		request.setAttribute("user",user);
 		return "/user/list";
 	}
 	
-	@RequestMapping
-	public void addUser(User user){
-		
-		
+	@RequestMapping(value="/save",method=RequestMethod.POST)
+	public void addUser(HttpServletRequest request,User user){
+		try {
+			userService.saveUser(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 
