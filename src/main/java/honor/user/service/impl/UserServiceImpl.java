@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import honor.common.Page;
 import honor.model.User;
 import honor.user.dao.UserDao;
 import honor.user.service.UserService;
@@ -31,6 +32,14 @@ public class UserServiceImpl implements UserService{
 	}
 	public void saveUser(User user) {
 		userDao.saveUser(user);
+		
+	}
+	public Page getUserListByPage(User user) {
+		
+		List<User> userList = userDao.getUserListByPage(user);
+		Page page = user.getPage();
+		page.setResults(userList);
+		return page;
 		
 	}
 

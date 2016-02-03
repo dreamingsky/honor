@@ -17,8 +17,7 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util-3.2.xsd">
  
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
-    destroy-method="close" >
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close" >
 		    <property name="driverClassName">
 		      <value>${jdbc_driverClassName}</value>
 		    </property>
@@ -63,9 +62,9 @@
 		    <property name="connectionProperties">
 		      <value>clientEncoding=UTF-8</value>
 		    </property>
-  </bean>
+  	</bean>
      
-    <!-- mybatis文件配置，扫描所有mapper文件 -->
+    	<!-- mybatis文件配置，扫描所有mapper文件 -->
        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
           p:configLocation="classpath:conf/mybatis-config.xml"

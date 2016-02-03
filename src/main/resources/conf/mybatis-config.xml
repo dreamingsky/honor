@@ -3,10 +3,20 @@
     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!-- 配置参数 -->
+    <properties>
+	    <property name="dialect" value="mysql" />  
+	    <property name="pageSqlId" value=".*Page$" />  
+    </properties>
     <!-- 定义别名 -->
     <typeAliases>
         <typeAlias type="honor.model.User" alias="user" />
     </typeAliases>
+    
+    <!-- 定义插件 -->
+    <plugins>
+		<plugin interceptor="honor.base.interceptor.PageInterceptor"></plugin>        
+    </plugins>
      
     <!-- 这里不需要再注册mybatis的SQL映射文件 ，因为在Spring的配置文件中配置sqlSessionFactory时注册了mapper的路径-->
 </configuration>

@@ -1,7 +1,10 @@
 package honor.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User extends PageParam implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String loginName;
 	private String chinaName;

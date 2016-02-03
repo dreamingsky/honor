@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import honor.common.Page;
 import honor.model.User;
 import honor.user.service.impl.UserServiceImpl;
 
@@ -23,8 +24,8 @@ public class UserController {
 		
 		System.out.println("1111111111111");
 		
-		List<User> userList = userService.getUserList();
-		request.setAttribute("userList",userList);
+		Page page = userService.getUserListByPage(user);
+		request.setAttribute("page",page);
 		return "/user/list";
 	}
 	
